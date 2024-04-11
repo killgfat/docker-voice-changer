@@ -8,7 +8,7 @@ RUN apt-get update \
         && apt-get install -y python3-pip espeak gosu libsndfile1-dev emacs git \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/* \
-        && git clone https://github.com/w-okada/voice-changer.git -b v.1.5.3.13 \
+        && git clone https://github.com/w-okada/voice-changer.git \
         && chmod 0777 /voice-changer/server
 WORKDIR /voice-changer/server
 RUN pip install numpy==1.23.5 \

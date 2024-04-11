@@ -6,7 +6,8 @@ services:
     environment:
       - EX_IP=0.0.0.0
       - EX_PORT=18888
-    user: 0:1001
+      - LOCAL_UID=0
+      - LOCAL_GID=0
     restart: unless-stopped
     volumes:
       - "./model:/voice-changer/server/model_dir"

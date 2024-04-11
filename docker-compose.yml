@@ -1,0 +1,22 @@
+version: "3"
+services:
+  voice-changer:
+    image: killgfat/voice-changer
+    container_name: voice-changer
+    environment:
+      - EX_IP=0.0.0.0
+      - EX_PORT=18888
+    user: 0:1001
+    restart: unless-stopped
+    volumes:
+      - "./model:/voice-changer/server/model_dir"
+      - "./pretrain:/voice-changer/server/pretrain"
+    ports:
+      - 18888:18888
+    # deploy:
+      # resources:
+        # reservations:
+          # devices:
+            # - driver: nvidia
+              # count: all
+              # capabilities: [gpu]

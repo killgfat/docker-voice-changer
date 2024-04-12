@@ -12,8 +12,8 @@ RUN apt-get update \
         && chmod 0777 /voice-changer/server
 WORKDIR /voice-changer/server
 RUN pip install numpy==1.23.5 \
-        && pip install fairseq \
         && pip install pyworld==0.3.3 --no-build-isolation \
+        && pip install fairseq==0.12.2 \
         && pip install -r requirements.txt
 COPY ./run.sh ./
 ENTRYPOINT ["/bin/bash","./run.sh"]

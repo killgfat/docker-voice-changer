@@ -1,5 +1,6 @@
 #!/bin/bash
-python3 MMVCServerSIO.py -p 18888 --https true \
+socat TCP-LISTEN:18888,fork,bind=0.0.0.0 TCP:127.0.0.1:18887
+python3 MMVCServerSIO.py -p 18887 --https true \
     --content_vec_500 pretrain/checkpoint_best_legacy_500.pt  \
     --content_vec_500_onnx pretrain/content_vec_500.onnx \
     --content_vec_500_onnx_on true \

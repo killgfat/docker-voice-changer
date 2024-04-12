@@ -5,7 +5,7 @@ ENV EX_IP=0.0.0.0
 ENV EX_PORT=18888
 WORKDIR /
 RUN apt-get update \
-        && apt-get install -y python3-pip espeak gosu libsndfile1-dev emacs git \
+        && apt-get install -y python3-pip espeak gosu libsndfile1-dev emacs git socat \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/* \
         && git clone https://github.com/w-okada/voice-changer.git \

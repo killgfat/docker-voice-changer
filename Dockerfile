@@ -14,7 +14,8 @@ WORKDIR /voice-changer/server
 RUN pip install numpy==1.23.5 \
         && pip install pyworld==0.3.3 --no-build-isolation \
         && pip install fairseq==0.12.2 \
-        && pip install -r requirements.txt
+        && pip install -r requirements.txt \
+        && pip cache purge
 COPY ./run.sh ./
 ENTRYPOINT ["/bin/bash","./run.sh"]
 # ENTRYPOINT ["/usr/bin/python3","MMVCServerSIO.py"] 
